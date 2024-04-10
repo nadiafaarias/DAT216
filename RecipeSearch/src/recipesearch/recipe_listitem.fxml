@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<fx:root onMouseClicked="#onClick" prefHeight="100.0" prefWidth="495.0" style="-fx-background-color: #ECECEC;" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fx:id="recipeImage" fitHeight="125.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@resources/logo.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="recipeLabel" layoutX="150.0" layoutY="20.0" prefHeight="17.0" prefWidth="332.0" text="Stekt Ägg" />
+   </children>
+</fx:root>
