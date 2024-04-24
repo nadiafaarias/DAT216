@@ -1,2 +1,65 @@
+.text-normal{
+    -fx-font-size: 13px;
+    -fx-font-family: "Avenir Next Condensed";
+}
 
+.text-smaller{
+    -fx-font-family: "Avenir Next Condensed";
+    -fx-font-size: 11px;
+}
+
+.text-larger{
+    -fx-font-family: "Avenir Next Condensed";
+    -fx-font-size: 15px;
+}
+
+.text-large-title{
+    -fx-font-family: "Avenir Next Condensed";
+    -fx-font-size: 30px;
+}
+
+#logo{
+    -fx-font-family: "Phosphate";
+    -fx-font-size: 48px;
+}
+
+#logo-twirl{
+    -fx-font-family: "SignPainter";
+    -fx-font-size: 64px;
+    -fx-text-fill: "FFAC33";
+    -fx-rotate: -20px;
+}
+
+.text-title{
+    -fx-font-family: "Avenir Next Condensed";
+    -fx-font-size: 20px;
+}
+
+.text-description{
+    -fx-font-size: 11px;
+    -fx-font-family: SansSerif;
+}
+
+.recipe-list-item{
+    -fx-border-width: 1px;
+    -fx-border-color: #999999;
+    -fx-border-radius: 1px;
+    -fx-background-radius: 1px;
+}
+
+.recipe-list-item:hover{
+    -fx-background-color: #FCFCFC;
+}
+
+.recipe-list-item:pressed{
+    -fx-background-color: #D0D0D0;
+}
+
+.text-area .content{
+    -fx-background-color: #ECECEC;
+}
+
+.text-area {
+    -fx-background-color: #ECECEC;
+}
 

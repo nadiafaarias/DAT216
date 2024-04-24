@@ -4,14 +4,45 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<fx:root onMouseClicked="#onClick" prefHeight="100.0" prefWidth="495.0" style="-fx-background-color: #ECECEC;" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#onClick" prefHeight="100.0" prefWidth="495.0" styleClass="recipe-list-item" stylesheets="@recipe_search.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ImageView fx:id="recipeImage" fitHeight="125.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="recipeImage" fitHeight="90.0" fitWidth="90.0" layoutX="14.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@resources/logo.png" />
          </image>
       </ImageView>
-      <Label fx:id="recipeLabel" layoutX="150.0" layoutY="20.0" prefHeight="17.0" prefWidth="332.0" text="Stekt Ägg" />
+      <ImageView fx:id="flagImage" fitHeight="19.0" fitWidth="29.0" layoutX="75.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@resources/icon_flag_sweden.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="recipeLabel" layoutX="153.0" layoutY="2.0" prefHeight="25.0" prefWidth="332.0" styleClass="text-title" text="Stekt Ägg" />
+      <ImageView fx:id="ingredientImage" fitHeight="19.0" fitWidth="19.0" layoutX="153.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@resources/icon_main_veg.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="difficultyImage" fitHeight="17.0" fitWidth="96.0" layoutX="182.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@resources/icon_difficulty_easy.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="timeLabel" layoutX="264.0" layoutY="28.0" styleClass="text-smaller" text="5 minuter">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Label fx:id="costLabel" layoutX="330.0" layoutY="28.0" styleClass="text-smaller" text="12 kr">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Label fx:id="descriptionLabel" layoutX="153.0" layoutY="48.0" prefHeight="41.0" prefWidth="332.0" styleClass="text-description" text="Ägg kan stekas på båda sidorna, hahahahahahahaha" wrapText="true">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Label>
    </children>
 </fx:root>

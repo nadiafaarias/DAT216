@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
@@ -8,47 +7,105 @@
 <?import javafx.scene.control.Slider?>
 <?import javafx.scene.control.Spinner?>
 <?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="500.0" maxWidth="800.0" minHeight="500.0" minWidth="800.0" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="recipesearch.RecipeSearchController">
+<AnchorPane maxHeight="500.0" maxWidth="800.0" minHeight="500.0" minWidth="800.0" prefHeight="500.0" prefWidth="800.0" stylesheets="@recipe_search.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="recipesearch.RecipeSearchController">
    <children>
       <StackPane layoutX="51.0" layoutY="23.0" prefHeight="311.0" prefWidth="440.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-          <AnchorPane fx:id="detailedRecipe" minHeight="0.0" minWidth="0.0" prefHeight="436.0" prefWidth="724.0" style="-fx-background-color: #ECECEC;">
+            <AnchorPane fx:id="detailedRecipe" onMouseClicked="#closeRecipeView" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0,0,0,0.75);">
                <children>
-                  <Label fx:id="detailedName" layoutX="228.0" layoutY="14.0" prefHeight="57.0" prefWidth="415.0" text="Label">
-                     <font>
-                        <Font size="35.0" />
-                     </font>
-                  </Label>
-                  <ImageView fx:id="detailedImage" fitHeight="189.0" fitWidth="189.0" layoutX="14.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" />
-                  <Button layoutX="660.0" layoutY="14.0" mnemonicParsing="false" onAction="#closeRecipeView" text="Stäng" />
+                <AnchorPane minHeight="0.0" minWidth="0.0" onMouseClicked="#mouseTrap" prefHeight="436.0" prefWidth="724.0" style="-fx-background-color: #ECECEC;" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="40.0">
+                     <children>
+                        <Label fx:id="detailedName" layoutX="228.0" layoutY="14.0" prefHeight="57.0" prefWidth="383.0" styleClass="text-large-title" text="Label">
+                           <font>
+                              <Font size="35.0" />
+                           </font>
+                        </Label>
+                        <ImageView fx:id="detailedImage" fitHeight="189.0" fitWidth="189.0" layoutX="14.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="208.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="477.0" AnchorPane.topAnchor="23.0" />
+                        <TextArea fx:id="detailedIngredientList" editable="false" layoutX="14.0" layoutY="247.0" prefHeight="171.0" prefWidth="189.0" wrapText="true" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="477.0" AnchorPane.topAnchor="247.0" />
+                        <TextArea fx:id="detailedInstructions" editable="false" layoutX="228.0" layoutY="190.0" prefHeight="228.0" prefWidth="445.0" wrapText="true" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="228.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="190.0" />
+                        <TextArea fx:id="detailedDescription" editable="false" layoutX="228.0" layoutY="97.0" prefHeight="42.0" prefWidth="445.0" wrapText="true" />
+                        <ImageView fx:id="detailedFlagImage" fitHeight="42.0" fitWidth="65.0" layoutX="105.0" layoutY="138.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fx:id="detailedMainIngredientImage" fitHeight="26.0" fitWidth="26.0" layoutX="228.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fx:id="detailedDifficultyImage" fitHeight="26.0" fitWidth="65.0" layoutX="274.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fitHeight="26.0" fitWidth="26.0" layoutX="381.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/icon_time.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="detailedTime" layoutX="421.0" layoutY="66.0" prefHeight="17.0" prefWidth="65.0" styleClass="text-smaller" text="Label" />
+                        <Label fx:id="detailedCost" layoutX="509.0" layoutY="66.0" prefHeight="17.0" prefWidth="44.0" styleClass="text-smaller" text="Label" />
+                        <ImageView fx:id="closeImageView" fitHeight="16.0" fitWidth="17.0" layoutX="658.0" layoutY="6.0" onMouseClicked="#closeRecipeView" onMouseEntered="#closeButtonMouseEntered" onMouseExited="#closeButtonMouseExited" onMousePressed="#closeButtonMousePressed" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="398.0" AnchorPane.leftAnchor="658.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="6.0">
+                           <image>
+                              <Image url="@resources/icon_close.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="236.0" layoutY="172.0" prefHeight="17.0" prefWidth="96.0" styleClass="text-larger" text="Tillagning:" />
+                        <Label layoutX="23.0" layoutY="231.0" styleClass="text-larger" text="Ingredienser:" />
+                     </children>
+                  </AnchorPane>
                </children>
             </AnchorPane>
             <SplitPane fx:id="searchView" dividerPositions="0.35" prefHeight="160.0" prefWidth="200.0">
               <items>
                   <AnchorPane fx:id="searchPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ECECEC;">
                      <children>
-                        <Label layoutX="18.0" layoutY="86.0" prefHeight="75.0" prefWidth="244.0" text="Hitta ett recept som passar genom att ändra i inställningarna nedanför" textAlignment="CENTER" wrapText="true" AnchorPane.leftAnchor="18.0" AnchorPane.rightAnchor="14.0" />
-                        <Label alignment="CENTER_RIGHT" layoutX="14.0" layoutY="181.0" prefWidth="100.0" text="Huvudingrediens: " />
-                        <Label alignment="CENTER_RIGHT" layoutX="14.0" layoutY="223.0" prefWidth="100.0" text="Kök: " />
-                        <Label alignment="CENTER_RIGHT" layoutX="14.0" layoutY="269.0" prefWidth="100.0" text="Svårighetsgrad: " />
-                        <Label alignment="CENTER_RIGHT" layoutX="14.0" layoutY="386.0" prefWidth="100.0" text="Maxpris: " />
-                        <Label alignment="CENTER_RIGHT" layoutX="14.0" layoutY="416.0" prefWidth="100.0" text="Maxtid: " />
-                        <ComboBox fx:id="cuisineComboBox" layoutX="118.0" layoutY="218.0" prefWidth="150.0" />
-                        <ComboBox fx:id="mainIngredientComboBox" layoutX="118.0" layoutY="177.0" prefWidth="150.0" />
-                        <RadioButton fx:id="allRadioButton" layoutX="118.0" layoutY="269.0" mnemonicParsing="false" text="Alla" />
-                        <RadioButton fx:id="hardRadioButton" layoutX="118.0" layoutY="344.0" mnemonicParsing="false" text="Svår" />
-                        <RadioButton fx:id="intermediateRadioButton" layoutX="118.0" layoutY="319.0" mnemonicParsing="false" text="Mellan" />
-                        <RadioButton fx:id="easyRadioButton" layoutX="118.0" layoutY="293.0" mnemonicParsing="false" text="Lätt" />
-                        <Spinner fx:id="maxPriceSpinner" layoutX="118.0" layoutY="382.0" prefHeight="26.0" prefWidth="100.0" />
-                        <Label layoutX="223.0" layoutY="386.0" text="kr" />
+                        <Label layoutX="18.0" layoutY="86.0" prefHeight="75.0" prefWidth="244.0" styleClass="text-larger" text="Hitta ett recept som passar genom att ändra i inställningarna nedanför" textAlignment="CENTER" wrapText="true" AnchorPane.leftAnchor="18.0" AnchorPane.rightAnchor="14.0" />
+                        <Label alignment="CENTER_RIGHT" layoutX="2.0" layoutY="181.0" prefHeight="17.0" prefWidth="112.0" styleClass="text-normal" text="Huvudingrediens: " />
+                        <Label alignment="CENTER_RIGHT" layoutX="14.0" layoutY="223.0" prefWidth="100.0" styleClass="text-normal" text="Kök: " />
+                        <Label alignment="CENTER_RIGHT" layoutX="14.0" layoutY="269.0" prefWidth="100.0" styleClass="text-normal" text="Svårighetsgrad: " />
+                        <Label alignment="CENTER_RIGHT" layoutX="14.0" layoutY="386.0" prefWidth="100.0" styleClass="text-normal" text="Maxpris: " />
+                        <Label alignment="CENTER_RIGHT" layoutX="14.0" layoutY="416.0" prefWidth="100.0" styleClass="text-normal" text="Maxtid: " />
+                        <ComboBox fx:id="mainIngredientComboBox" layoutX="118.0" layoutY="177.0" prefWidth="150.0" styleClass="text-smaller" />
+                        <ComboBox fx:id="cuisineComboBox" layoutX="118.0" layoutY="218.0" prefWidth="150.0" styleClass="text-smaller" />
+                        <RadioButton fx:id="allRadioButton" layoutX="118.0" layoutY="269.0" mnemonicParsing="false" styleClass="text-smaller" text="Alla" />
+                        <RadioButton fx:id="easyRadioButton" layoutX="118.0" layoutY="293.0" mnemonicParsing="false" styleClass="text-smaller" text="Lätt">
+                           <graphic>
+                              <ImageView fitHeight="18.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@resources/icon_difficulty_easy.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></RadioButton>
+                        <RadioButton fx:id="intermediateRadioButton" layoutX="118.0" layoutY="319.0" mnemonicParsing="false" styleClass="text-smaller" text="Mellan">
+                           <graphic>
+                              <ImageView fitHeight="17.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@resources/icon_difficulty_medium.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></RadioButton>
+                        <RadioButton fx:id="hardRadioButton" layoutX="118.0" layoutY="344.0" mnemonicParsing="false" styleClass="text-smaller" text="Svår">
+                           <graphic>
+                              <ImageView fitHeight="17.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@resources/icon_difficulty_hard.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></RadioButton>
+                        <Spinner fx:id="maxPriceSpinner" layoutX="118.0" layoutY="382.0" prefHeight="26.0" prefWidth="100.0" styleClass="text-smaller" />
                         <Slider fx:id="maxTimeSlider" layoutX="114.0" layoutY="417.0" max="150.0" />
-                        <Label fx:id="timeLabel" layoutX="188.0" layoutY="443.0" text="0 minuter" />
+                        <Label layoutX="223.0" layoutY="386.0" text="kr" />
+                        <Label fx:id="timeLabel" layoutX="188.0" layoutY="443.0" styleClass="text-smaller" text="0 minuter" />
+                        <ImageView fitHeight="65.0" fitWidth="65.0" layoutX="19.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="417.0" AnchorPane.leftAnchor="19.0" AnchorPane.rightAnchor="192.0" AnchorPane.topAnchor="16.0">
+                           <image>
+                              <Image url="@resources/logo.png" />
+                           </image>
+                        </ImageView>
+                        <Label id="logo" layoutX="88.0" layoutY="24.0" prefHeight="26.0" prefWidth="179.0" text="Recept" />
+                        <Label id="logo-twirl" layoutX="163.0" layoutY="40.0" prefHeight="17.0" prefWidth="81.0" text="Sök" />
+                        <ImageView fitHeight="17.0" fitWidth="17.0" layoutX="169.0" layoutY="443.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="38.0" AnchorPane.leftAnchor="169.0" AnchorPane.rightAnchor="90.0" AnchorPane.topAnchor="443.0">
+                           <image>
+                              <Image url="@resources/icon_time.png" />
+                           </image>
+                        </ImageView>
                      </children>
                   </AnchorPane>
                 <AnchorPane fx:id="recipeDetailPane" minHeight="0.0" minWidth="0.0" prefHeight="498.0" prefWidth="431.0" style="-fx-background-color: #FF000000;">

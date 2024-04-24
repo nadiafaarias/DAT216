@@ -612,7 +612,7 @@ Lätt
 #time
 10
 #cuisine
-Italien
+Frankrike
 #price
 5
 #image
